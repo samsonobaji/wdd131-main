@@ -1,0 +1,187 @@
+/* CSS Variables for Theming */
+
+:root {
+    /* Colors */
+    --primary-color: #f68b1e;
+    --secondary-color: #232323;
+    --accent-color: #00b517;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f5f5f5;
+    --dark-color: #232323;
+    --white: #ffffff;
+    --black: #000000;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+
+    /* Typography */
+    --font-family-base: 'Open Sans', Arial, sans-serif;
+    --font-family-heading: 'Montserrat', 'Open Sans', Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --line-height-base: 1.5;
+    --line-height-sm: 1.25;
+    --line-height-lg: 1.75;
+
+    /* Spacing */
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 1rem;
+    --spacing-4: 1.5rem;
+    --spacing-5: 2rem;
+    --spacing-6: 3rem;
+    --spacing-7: 4rem;
+    --spacing-8: 5rem;
+
+    /* Borders */
+    --border-width: 1px;
+    --border-color: var(--gray-300);
+    --border-radius-sm: 0.25rem;
+    --border-radius: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-circle: 50%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+    /* Transitions */
+    --transition-base: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.5s ease;
+
+    /* Z-index */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+
+    /* Container */
+    --container-max-width: 1200px;
+    --container-padding: var(--spacing-3);
+
+    /* Grid */
+    --grid-columns: 12;
+    --grid-gutter: var(--spacing-3);
+
+    /* Breakpoints */
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+
+    /* Product Card */
+    --product-card-padding: var(--spacing-3);
+    --product-card-border-radius: var(--border-radius);
+    --product-card-shadow: var(--shadow);
+    --product-card-shadow-hover: var(--shadow-hover);
+
+    /* Form Elements */
+    --input-padding: var(--spacing-2) var(--spacing-3);
+    --input-border-radius: var(--border-radius-sm);
+    --input-border-color: var(--border-color);
+    --input-focus-border-color: var(--primary-color);
+    --input-focus-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+    --input-disabled-bg: var(--gray-200);
+    --input-disabled-color: var(--gray-600);
+
+    /* Buttons */
+    --btn-padding-y: var(--spacing-2);
+    --btn-padding-x: var(--spacing-3);
+    --btn-border-radius: var(--border-radius-sm);
+    --btn-font-weight: var(--font-weight-medium);
+    --btn-transition: var(--transition-base);
+
+    /* Navigation */
+    --navbar-height: 4rem;
+    --navbar-padding: var(--spacing-3);
+    --navbar-bg: var(--white);
+    --navbar-shadow: var(--shadow);
+
+    /* Footer */
+    --footer-bg: var(--gray-900);
+    --footer-color: var(--gray-300);
+    --footer-padding: var(--spacing-6) 0;
+
+    /* Cart */
+    --cart-item-padding: var(--spacing-3);
+    --cart-item-border-color: var(--border-color);
+    --cart-item-hover-bg: var(--gray-100);
+
+    /* Checkout */
+    --checkout-step-size: 2rem;
+    --checkout-step-border: 2px solid var(--border-color);
+    --checkout-step-active-color: var(--primary-color);
+
+    /* Blog */
+    --blog-post-padding: var(--spacing-4);
+    --blog-post-border-radius: var(--border-radius);
+    --blog-post-shadow: var(--shadow);
+
+    /* Reviews */
+    --review-padding: var(--spacing-3);
+    --review-border-radius: var(--border-radius);
+    --review-shadow: var(--shadow);
+    --star-color: var(--warning-color);
+    --star-size: 1.25rem;
+
+    /* Wishlist */
+    --wishlist-item-padding: var(--spacing-3);
+    --wishlist-item-border-color: var(--border-color);
+    --wishlist-item-hover-bg: var(--gray-100);
+
+    /* Compare */
+    --compare-table-border-color: var(--border-color);
+    --compare-table-header-bg: var(--gray-100);
+    --compare-table-hover-bg: var(--gray-50);
+
+    /* Maintenance */
+    --maintenance-bg: var(--gray-100);
+    --maintenance-text-color: var(--gray-900);
+    --maintenance-icon-size: 4rem;
+
+    /* Coming Soon */
+    --coming-soon-bg: var(--gray-100);
+    --coming-soon-text-color: var(--gray-900);
+    --countdown-size: 5rem;
+    --countdown-bg: var(--white);
+    --countdown-shadow: var(--shadow);
+
+    /* Print */
+    --print-font-size: 12pt;
+    --print-line-height: 1.5;
+    --print-margin: 2cm;
+
+    /* Jumia-inspired Colors */
+    --jumia-primary: #f68b1e;
+    --jumia-secondary: #232323;
+    --jumia-accent: #00b517;
+    --jumia-bg: #f5f5f5;
+    --jumia-text: #232323;
+    --jumia-text-light: #555555;
+} 

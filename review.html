@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Submitted</title>
+  <link rel="stylesheet" href="styles/form.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let count = localStorage.getItem("reviewCount");
+      count = count ? parseInt(count) + 1 : 1;
+      localStorage.setItem("reviewCount", count);
+      document.getElementById("reviewCount").textContent = count;
+      document.getElementById("currentyear").textContent = new Date().getFullYear();
+      document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Thank You for Your Review!</h1>
+  </header>
+  <main>
+    <p>Your review has been submitted successfully.</p>
+    <p>You have submitted <strong><span id="reviewCount">0</span></strong> review(s) from this browser.</p>
+    <a href="form.html">Submit another review</a>
+  </main>
+  <footer>
+    <p>&copy; <span id="currentyear"></span> Samson Obaji</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html> 

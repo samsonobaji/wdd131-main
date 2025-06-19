@@ -1,0 +1,147 @@
+/* Base styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header styles */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* Hamburger button */
+#hamburgerBtn {
+    position: static;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+}
+
+/* Navigation styles */
+nav {
+    display: none;
+    background-color: var(--primary-color);
+    width: 100%;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+figcaption br {
+    margin: 0.3rem 0;
+}
+
+figcaption::after {
+    content: "The Church of Jesus Christ of Latter-day Saints";
+    display: block;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+} 

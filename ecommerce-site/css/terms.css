@@ -1,0 +1,139 @@
+/* Terms Page Specific Styles */
+
+.terms-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.terms-header h1 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.terms-header p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Terms Content */
+.terms-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.terms-section {
+    margin-bottom: 3rem;
+}
+
+.terms-section:last-child {
+    margin-bottom: 0;
+}
+
+.terms-section h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.terms-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.terms-section ul {
+    list-style: disc;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.terms-section li {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Table of Contents */
+.toc {
+    background: var(--light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.toc h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.toc a:hover {
+    color: var(--secondary-color);
+}
+
+/* Last Updated */
+.last-updated {
+    text-align: center;
+    color: #666;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Print Styles */
+@media print {
+    .terms-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .terms-content {
+        box-shadow: none;
+    }
+
+    .toc {
+        display: none;
+    }
+
+    .last-updated {
+        border-top: none;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-container {
+        margin: 2rem auto;
+    }
+
+    .terms-header {
+        margin-bottom: 2rem;
+    }
+
+    .terms-content {
+        padding: 1.5rem;
+    }
+} 

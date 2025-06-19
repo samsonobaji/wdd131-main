@@ -1,0 +1,215 @@
+/* Print Page Specific Styles */
+
+@media print {
+    /* General Print Styles */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        line-height: 1.4;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12pt;
+    }
+
+    /* Hide Elements */
+    .no-print,
+    header,
+    footer,
+    nav,
+    .sidebar,
+    .social-share,
+    .newsletter-section,
+    .related-posts,
+    .comments-section,
+    .back-to-top {
+        display: none !important;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+    }
+
+    /* Images */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    /* Headers */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 20pt;
+    }
+
+    h3 {
+        font-size: 16pt;
+    }
+
+    /* Lists */
+    ul, ol {
+        page-break-before: avoid;
+    }
+
+    li {
+        page-break-inside: avoid;
+    }
+
+    /* Tables */
+    table {
+        page-break-inside: avoid;
+    }
+
+    th, td {
+        border: 1px solid #000 !important;
+    }
+
+    /* Page Breaks */
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Product Page Specific */
+    .product-gallery {
+        display: block !important;
+    }
+
+    .product-info {
+        page-break-before: always;
+    }
+
+    .product-description {
+        page-break-before: always;
+    }
+
+    /* Order Confirmation Specific */
+    .order-details {
+        page-break-before: always;
+    }
+
+    .order-summary {
+        page-break-before: always;
+    }
+
+    /* Blog Post Specific */
+    .post-content {
+        page-break-before: always;
+    }
+
+    .post-meta {
+        display: block !important;
+    }
+
+    /* Terms and Privacy Specific */
+    .terms-content,
+    .privacy-content {
+        page-break-before: always;
+    }
+
+    .toc {
+        display: none !important;
+    }
+
+    /* Utility Classes */
+    .page-break {
+        page-break-before: always;
+    }
+
+    .no-page-break {
+        page-break-inside: avoid;
+    }
+
+    /* Margins and Padding */
+    .container,
+    .content-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Colors and Backgrounds */
+    .text-primary,
+    .text-secondary {
+        color: #000 !important;
+    }
+
+    .bg-primary,
+    .bg-secondary,
+    .bg-light {
+        background: none !important;
+    }
+
+    /* Borders */
+    .border,
+    .border-top,
+    .border-bottom,
+    .border-left,
+    .border-right {
+        border: 1px solid #000 !important;
+    }
+
+    /* Shadows */
+    .shadow,
+    .shadow-sm,
+    .shadow-lg {
+        box-shadow: none !important;
+    }
+
+    /* Forms */
+    input,
+    textarea,
+    select {
+        border: 1px solid #000 !important;
+    }
+
+    /* Buttons */
+    .btn,
+    button {
+        border: 1px solid #000 !important;
+        background: none !important;
+    }
+
+    /* Footer */
+    footer {
+        position: static !important;
+    }
+
+    /* Page Numbers */
+    @page {
+        margin: 2cm;
+    }
+
+    @page :first {
+        margin-top: 3cm;
+    }
+
+    /* Headers and Footers */
+    @page {
+        @top-center {
+            content: "Ecommerce Site";
+        }
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+} 

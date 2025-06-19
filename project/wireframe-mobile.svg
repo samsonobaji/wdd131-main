@@ -1,0 +1,21 @@
+<svg width="320" height="480" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="300" height="460" rx="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <rect x="30" y="20" width="260" height="40" rx="8" fill="#008751"/>
+  <text x="160" y="45" font-size="18" font-family="Arial" fill="#fff" text-anchor="middle">Site Logo</text>
+  <rect x="30" y="70" width="260" height="30" rx="6" fill="#e0e0e0"/>
+  <text x="160" y="90" font-size="14" font-family="Arial" fill="#333" text-anchor="middle">Site Name (H1)</text>
+  <rect x="30" y="110" width="260" height="30" rx="6" fill="#d0ffd0"/>
+  <text x="160" y="130" font-size="13" font-family="Arial" fill="#333" text-anchor="middle">Navigation Menu</text>
+  <rect x="30" y="150" width="260" height="40" rx="6" fill="#fff" stroke="#008751" stroke-width="1"/>
+  <text x="160" y="175" font-size="13" font-family="Arial" fill="#333" text-anchor="middle">Site Purpose Text</text>
+  <rect x="30" y="200" width="260" height="40" rx="6" fill="#fff" stroke="#008751" stroke-width="1"/>
+  <text x="160" y="225" font-size="13" font-family="Arial" fill="#333" text-anchor="middle">Scenarios List</text>
+  <rect x="30" y="250" width="260" height="30" rx="6" fill="#008751"/>
+  <text x="160" y="270" font-size="13" font-family="Arial" fill="#fff" text-anchor="middle">Color Scheme</text>
+  <rect x="30" y="290" width="260" height="30" rx="6" fill="#e0e0e0"/>
+  <text x="160" y="310" font-size="13" font-family="Arial" fill="#333" text-anchor="middle">Typography</text>
+  <rect x="30" y="330" width="260" height="60" rx="6" fill="#fff" stroke="#008751" stroke-width="1"/>
+  <text x="160" y="360" font-size="13" font-family="Arial" fill="#333" text-anchor="middle">Wireframe Sketches</text>
+  <rect x="30" y="400" width="260" height="40" rx="6" fill="#333"/>
+  <text x="160" y="425" font-size="13" font-family="Arial" fill="#fff" text-anchor="middle">Footer Info</text>
+</svg> 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria</title>
+    <meta name="description" content="Explore the beauty and culture of Nigeria">
+    <meta name="author" content="Samson Obaji">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet">
+    
+    <!-- Mobile-First CSS -->
+    <link rel="stylesheet" href="styles/place.css">
+    
+    <!-- Larger Screen CSS -->
+    <link rel="stylesheet" href="styles/place-large.css" media="(min-width: 768px)">
+    
+    <!-- Deferred JavaScript -->
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Nigeria</h1>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <div class="hero">
+            <picture>
+                <source srcset="images/mko-stadium-stadium.jpg" media="(min-width: 768px)">
+                <img src="images/mko-stadium-stadium.jpg" alt="MKO Abiola Stadium, Abuja, Nigeria">
+            </picture>
+            
+            <!-- Hero Overlay (only used in desktop view) -->
+            <div class="hero-overlay"></div>
+            <!-- Data Section overlayed on hero -->
+            <div class="data">
+                <h2>Data</h2>
+                <ul>
+                    <li>Population: 200+ million</li>
+                    <li>Capital: Abuja</li>
+                    <li>Languages: English, Yoruba, Igbo, Hausa</li>
+                </ul>
+            </div>
+            <!-- Weather Section overlayed on hero -->
+            <div class="weather">
+                <h2>Weather in Lagos</h2>
+                <img src="images/weather-icon.svg" alt="Weather icon" class="weather-icon mobile-only">
+                <div class="weather-details">
+                    <p>Temperature: <span id="temperature">8</span>°C</p>
+                    <p>Wind Speed: <span id="wind-speed">10</span> km/h</p>
+                    <p>Wind Chill: <span id="wind-chill">Calculating...</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> 🌺Samson Obaji🌺 - Nigeria. Last modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

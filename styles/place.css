@@ -1,0 +1,147 @@
+/* CSS Variables */
+:root {
+    /* Colors based on Nigerian flag */
+    --primary-color: #008751;  /* Green */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #333333;   /* Dark gray for text */
+    --background-color: #f5f5f5;
+    --overlay-text: #004d33;   /* Darker green for better contrast */
+    
+    /* Typography */
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Roboto', sans-serif;
+    
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--accent-color);
+    background-color: var(--background-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--heading-font);
+    margin: var(--spacing-md) 0;
+    font-size: 1.8rem;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.hero picture,
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Overlay - Hidden on Mobile */
+.hero-overlay {
+    display: none;
+}
+
+/* Data Section */
+.data {
+    background: var(--secondary-color);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md);
+}
+
+.data h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
+.data ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.data li {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Weather Section */
+.weather {
+    background: var(--secondary-color);
+    padding: var(--spacing-lg);
+    margin: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.weather h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
+.weather-icon.mobile-only {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+    filter: brightness(0) invert(0.3);
+}
+
+.weather-details {
+    text-align: center;
+}
+
+.weather-details p {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: var(--spacing-sm) 0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: var(--spacing-md);
+    font-size: 0.9rem;
+}

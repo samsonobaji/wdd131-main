@@ -1,0 +1,390 @@
+/* Responsive Design Styles */
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* Navigation */
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-item {
+        margin: 0 0.5rem;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 250px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+
+    /* Navigation */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-color);
+        padding: 2rem;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .navbar-collapse.show {
+        left: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        z-index: 1000;
+        transition: 0.3s;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Forms */
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Extra Small Devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .product-card {
+        margin-bottom: 1rem;
+    }
+
+    /* Product Details */
+    .product-gallery {
+        margin-bottom: 1rem;
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+
+    /* Cart */
+    .cart-item {
+        flex-direction: column;
+    }
+
+    .cart-item-image {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .cart-item-details {
+        width: 100%;
+    }
+
+    /* Checkout */
+    .checkout-form {
+        padding: 1rem;
+    }
+
+    /* Blog */
+    .blog-post {
+        padding: 1rem;
+    }
+
+    .blog-post-image {
+        height: 200px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Forms */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Modals */
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    /* Alerts */
+    .alert {
+        padding: 0.75rem;
+    }
+
+    /* Tables */
+    .table-responsive {
+        margin-bottom: 1rem;
+    }
+
+    /* Pagination */
+    .pagination {
+        justify-content: center;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+        flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Tooltips */
+    .tooltip {
+        display: none !important;
+    }
+
+    /* Toast Notifications */
+    .toast {
+        width: 100%;
+        margin: 0.5rem;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide Elements */
+    .no-print,
+    header,
+    footer,
+    nav,
+    .sidebar,
+    .social-share,
+    .newsletter-section,
+    .related-posts,
+    .comments-section,
+    .back-to-top {
+        display: none !important;
+    }
+
+    /* Typography */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 20pt;
+    }
+
+    h3 {
+        font-size: 16pt;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+    }
+
+    /* Images */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    /* Page Breaks */
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Colors */
+    * {
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    /* Margins */
+    @page {
+        margin: 2cm;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --bg-color: #000000;
+        --text-color: #ffffff;
+        --text-muted: #cccccc;
+        --primary-color: #ffff00;
+        --secondary-color: #00ff00;
+        --accent-color: #ff00ff;
+        --border-color: #ffffff;
+        --light-gray: #333333;
+        --dark-gray: #666666;
+    }
+
+    * {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    img {
+        filter: contrast(1.2) brightness(1.2);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --text-muted: #a0a0a0;
+        --primary-color: #4caf50;
+        --secondary-color: #2e7d32;
+        --accent-color: #81c784;
+        --border-color: #333333;
+        --light-gray: #2d2d2d;
+        --dark-gray: #1f1f1f;
+    }
+} 

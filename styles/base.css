@@ -1,0 +1,266 @@
+/* Base styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header styles */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.intro-container {
+    width: 100%;
+}
+
+.intro-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.intro-text p {
+    flex: 1;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.state-section {
+    margin-top: 2rem;
+}
+
+.state-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.state-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.flag-image {
+    width: 120px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.state-info {
+    flex: 1;
+}
+
+.state-info p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.state-info ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+.state-info li {
+    margin-bottom: 0.5rem;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+.card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Resources list styles */
+.resources-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.resources-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resources-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.resources-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.resources-list a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    .intro-text {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .state-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        margin-top: 1rem;
+    }
+    
+    .flag-image {
+        margin-bottom: 1rem;
+    }
+    
+    .state-info p {
+        text-align: left;
+    }
+    
+    .resources-list {
+        margin: 1rem 0;
+    }
+    
+    .resources-list li {
+        margin-bottom: 0.6rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+} 

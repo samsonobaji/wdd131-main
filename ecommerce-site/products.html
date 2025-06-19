@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenithMart - Products</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <a href="help.html">Help</a>
+                <a href="#">Sell on ZenithMart</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">English | USD</a>
+                <a href="login.html" class="account-link"><i class="fas fa-user"></i> Account</a>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo.png" alt="Store Logo" class="logo">
+                </a>
+                <div class="navbar-categories"></div>
+                <form class="navbar-search">
+                    <input type="text" class="search-input" placeholder="Search products..." autocomplete="off">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-suggestions"></div>
+                </form>
+                <div class="navbar-actions">
+                    <a href="wishlist.html" class="action-link">
+                        <i class="fas fa-heart"></i>
+                        <span class="action-count wishlist-count">0</span>
+                    </a>
+                    <a href="compare.html" class="action-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span class="action-count compare-count">0</span>
+                    </a>
+                    <a href="cart.html" class="action-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="action-count cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="action-link">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="products-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Products</li>
+                </ol>
+            </nav>
+
+            <!-- Flash Sales Banner -->
+            <section class="flash-sales">
+                <div class="flash-header">
+                    <div class="flash-title">
+                        <i class="fas fa-bolt"></i>
+                        <h2>Flash Sales</h2>
+                        <div class="countdown" id="flash-countdown">
+                            <span class="time-block">
+                                <span class="value">12</span>
+                                <span class="label">Hours</span>
+                            </span>
+                            <span class="separator">:</span>
+                            <span class="time-block">
+                                <span class="value">30</span>
+                                <span class="label">Mins</span>
+                            </span>
+                            <span class="separator">:</span>
+                            <span class="time-block">
+                                <span class="value">45</span>
+                                <span class="label">Secs</span>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </section>
+
+            <div class="products-layout">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">
+                            Categories
+                            <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+                        </h3>
+                        <ul class="category-list">
+                            <li>
+                                <a href="#" class="category-link active">
+                                    <span>All Products</span>
+                                    <span class="count">(150)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link">
+                                    <span>Electronics</span>
+                                    <span class="count">(45)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link">
+                                    <span>Clothing</span>
+                                    <span class="count">(38)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link">
+                                    <span>Home & Living</span>
+                                    <span class="count">(29)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link">
+                                    <span>Beauty</span>
+                                    <span class="count">(18)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">
+                            Price Range
+                            <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+                        </h3>
+                        <div class="price-range">
+                            <input type="range" id="price-range" min="0" max="1000" step="10" value="500">
+                            <div class="price-inputs">
+                                <input type="number" id="min-price" placeholder="Min" min="0">
+                                <span>-</span>
+                                <input type="number" id="max-price" placeholder="Max" max="1000">
+                            </div>
+                            <button class="apply-price">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Brands -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">
+                            Brands
+                            <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+                        </h3>
+                        <div class="brand-list">
+                            <label class="brand-item">
+                                <input type="checkbox" name="brand" value="samsung">
+                                <span>Samsung</span>
+                                <span class="count">(25)</span>
+                            </label>
+                            <label class="brand-item">
+                                <input type="checkbox" name="brand" value="apple">
+                                <span>Apple</span>
+                                <span class="count">(18)</span>
+                            </label>
+                            <label class="brand-item">
+                                <input type="checkbox" name="brand" value="nike">
+                                <span>Nike</span>
+                                <span class="count">(15)</span>
+                            </label>
+                            <label class="brand-item">
+                                <input type="checkbox" name="brand" value="adidas">
+                                <span>Adidas</span>
+                                <span class="count">(12)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Ratings -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">
+                            Ratings
+                            <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+                        </h3>
+                        <div class="rating-list">
+                            <label class="rating-item">
+                                <input type="radio" name="rating" value="5">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="rating-count">(150)</span>
+                            </label>
+                            <label class="rating-item">
+                                <input type="radio" name="rating" value="4">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="rating-count">(100)</span>
+                            </label>
+                            <label class="rating-item">
+                                <input type="radio" name="rating" value="3">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="rating-count">(50)</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Content -->
+                <div class="products-content">
+                    <!-- Products Header -->
+                    <div class="products-header">
+                        <div class="products-count">
+                            Showing <span>24</span> of <span>150</span> products
+                        </div>
+                        <div class="products-actions">
+                            <div class="products-sort">
+                                <label for="sort-by">Sort by:</label>
+                                <select id="sort-by">
+                                    <option value="popularity">Popularity</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Rating</option>
+                                    <option value="newest">Newest</option>
+                                </select>
+                            </div>
+                            <div class="products-view">
+                                <button class="view-btn grid-view active" aria-label="Grid view">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn list-view" aria-label="List view">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="product-grid" id="products-grid">
+                        <!-- Sample Product Card -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <a href="product.html?id=s21ultra">
+                                    <img src="https://source.unsplash.com/featured/?smartphone" alt="Product">
+                                </a>
+                                <span class="product-badge">-20%</span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Compare">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Electronics</span>
+                                <h3 class="product-name"><a href="product.html?id=s21ultra">Samsung Galaxy S21 Ultra</a></h3>
+                                <div class="product-price">
+                                    <span class="current-price">$999.99</span>
+                                    <span class="old-price">$1,199.99</span>
+                                </div>
+                                <div class="product-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(128)</span>
+                                </div>
+                                <button class="btn add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <!-- More product cards will be loaded dynamically -->
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more">
+                        <button class="btn btn-outline">Load More Products</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted online shopping destination for quality products and excellent service.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Store Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@store.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ecommerce Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="quick-view-content">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cart-utils.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html> 

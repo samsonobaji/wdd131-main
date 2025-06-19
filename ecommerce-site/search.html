@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results - Ecommerce Store</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img src="images/logo.png" alt="Store Logo" class="logo">
+        </a>
+        <!-- Search bar will be injected by JS -->
+        <div class="navbar-actions"></div>
+      </div>
+    </nav>
+  </header>
+  <main class="search-page">
+    <div class="container">
+      <h1 class="page-title">Search Results</h1>
+      <div class="search-filters">
+        <select id="filter-category">
+          <option value="">All Categories</option>
+        </select>
+        <input type="number" id="filter-min-price" placeholder="Min Price">
+        <input type="number" id="filter-max-price" placeholder="Max Price">
+        <button id="apply-filters" class="btn btn-outline">Apply Filters</button>
+      </div>
+      <div class="product-grid" id="search-results"></div>
+    </div>
+  </main>
+  <script src="js/products-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html> 

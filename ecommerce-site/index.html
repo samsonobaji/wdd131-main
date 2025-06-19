@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenithMart - Home</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <a href="help.html">Help</a>
+                <a href="#">Sell on ZenithMart</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">English | USD</a>
+                <a href="login.html" class="account-link"><i class="fas fa-user"></i> Account</a>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="brand-header">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="images/logo.png" alt="ZenithMart Logo" class="logo">
+                    </a>
+                    <h1 class="site-title">ZenithMart</h1>
+                </div>
+                <div class="navbar-categories"></div>
+                <form class="navbar-search">
+                    <input type="text" class="search-input" placeholder="Search products..." autocomplete="off">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-suggestions"></div>
+                </form>
+                <div class="navbar-actions">
+                    <a href="wishlist.html" class="action-link">
+                        <i class="fas fa-heart"></i>
+                        <span class="action-count wishlist-count">0</span>
+                    </a>
+                    <a href="compare.html" class="action-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span class="action-count compare-count">0</span>
+                    </a>
+                    <a href="cart.html" class="action-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="action-count cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="action-link">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero enhanced-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-carousel">
+                <div class="carousel-slide active">
+                    <h1>Unbeatable Deals, Fast Delivery</h1>
+                    <p>Shop the latest electronics, fashion, home essentials, and more. Enjoy exclusive offers and lightning-fast delivery, only on our store!</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
+                </div>
+                <div class="carousel-slide">
+                    <h1>New Arrivals Every Week</h1>
+                    <p>Discover the hottest trends and must-have products, updated weekly for you.</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">See New Arrivals</a>
+                </div>
+                <div class="carousel-slide">
+                    <h1>Free Shipping on Orders Over $50</h1>
+                    <p>Enjoy free, fast delivery on all qualifying orders. Shop more, save more!</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">Start Shopping</a>
+                </div>
+                <div class="carousel-controls">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container promo-banner-content">
+            <div class="promo-icon"><i class="fas fa-bolt"></i></div>
+            <div class="promo-text">
+                <h2>Flash Sale: Up to 50% Off!</h2>
+                <p>Hurry, limited time only. Grab your favorite products at unbeatable prices.</p>
+            </div>
+            <a href="products.html" class="btn btn-accent">Shop Flash Sale</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid" id="featured-products">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <a href="products.html?category=electronics" class="category-card">
+                    <img src="images/categories/electronics.jpg" alt="Electronics">
+                    <h3>Electronics</h3>
+                </a>
+                <a href="products.html?category=clothing" class="category-card">
+                    <img src="images/categories/clothing.jpg" alt="Clothing">
+                    <h3>Clothing</h3>
+                </a>
+                <a href="products.html?category=home" class="category-card">
+                    <img src="images/categories/home.jpg" alt="Home & Living">
+                    <h3>Home & Living</h3>
+                </a>
+                <a href="products.html?category=beauty" class="category-card">
+                    <img src="images/categories/beauty.jpg" alt="Beauty">
+                    <h3>Beauty</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Brands -->
+    <section class="brands-section">
+        <div class="container brands-content">
+            <h2 class="section-title">Featured Brands</h2>
+            <div class="brands-logos">
+                <img src="images/brands/samsung.png" alt="Samsung">
+                <img src="images/brands/apple.png" alt="Apple">
+                <img src="images/brands/nike.png" alt="Nike">
+                <img src="images/brands/adidas.png" alt="Adidas">
+                <img src="images/brands/sony.png" alt="Sony">
+                <img src="images/brands/lg.png" alt="LG">
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="latest-posts">
+        <div class="container">
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <div class="blog-grid" id="latest-posts">
+                <!-- Blog posts will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates on new products and special promotions</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials/Trust Section -->
+    <section class="trust-section">
+        <div class="container trust-content">
+            <div class="trust-badge">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>Fast Delivery</h4>
+                <p>Get your orders delivered quickly and reliably.</p>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-lock"></i>
+                <h4>100% Secure Payment</h4>
+                <p>Your payment information is safe with us.</p>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-undo"></i>
+                <h4>Easy Returns</h4>
+                <p>Not satisfied? Return your order within 30 days.</p>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-star"></i>
+                <h4>Top Rated Service</h4>
+                <p>Thousands of happy customers trust us every day.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Banner -->
+    <section class="app-banner">
+        <div class="container app-banner-content">
+            <div class="app-banner-text">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Get the best experience on our mobile app!</span>
+            </div>
+            <div class="app-banner-links">
+                <a href="#" class="app-link"><img src="images/appstore.png" alt="App Store"></a>
+                <a href="#" class="app-link"><img src="images/playstore.png" alt="Google Play"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your trusted online shopping destination for quality products and excellent service.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Store Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@store.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ZenithMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/hero-carousel.js"></script>
+</body>
+</html> 

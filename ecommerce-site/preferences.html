@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences - E-Commerce Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">E-Commerce Store</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="preferences-section">
+            <h1>User Preferences</h1>
+            <div class="preferences-panel">
+                <div class="preference-item">
+                    <label for="theme-toggle">Dark Theme</label>
+                    <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-item">
+                    <label for="font-size">Font Size</label>
+                    <select id="font-size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+
+                <div class="preference-item">
+                    <label for="notification-toggle">Enable Notifications</label>
+                    <label class="theme-switch">
+                        <input type="checkbox" id="notification-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-item">
+                    <label for="currency-select">Currency</label>
+                    <div class="currency-selector">
+                        <select id="currency-select">
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
+                            <option value="JPY">JPY (¥)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preferences-panel">
+                <h2>Account Settings</h2>
+                <form id="account-form" onsubmit="return validateForm('account-form')">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="language">Preferred Language</label>
+                        <select id="language" required>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted online shopping destination for quality products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@ecommerce.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/user-preferences.js"></script>
+</body>
+</html> 

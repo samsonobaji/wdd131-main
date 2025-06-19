@@ -1,0 +1,31 @@
+/* Main CSS File */
+
+/* Base Styles and Variables */
+@import 'variables.css';
+@import 'base.css';
+
+/* Layout Components */
+@import 'utilities.css';
+@import 'animations.css';
+@import 'responsive.css';
+
+/* Page Specific Styles */
+@import 'home.css';
+@import 'products.css';
+@import 'cart.css';
+@import 'preferences.css';
+@import 'checkout.css';
+@import 'confirmation.css';
+@import 'about.css';
+@import 'contact.css';
+@import 'terms.css';
+@import 'privacy.css';
+@import 'wishlist.css';
+@import 'compare.css';
+@import 'reviews.css';
+@import 'blog-post.css';
+
+/* Special Pages */
+@import 'maintenance.css';
+@import 'coming-soon.css';
+@import 'print.css'; 

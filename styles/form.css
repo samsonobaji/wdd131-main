@@ -1,0 +1,202 @@
+:root {
+  --page-background: #e0e7eb; /* Soft, very light blue-grey for body */
+  --form-elements-background: #d1d8e0; /* Slightly richer blue-grey for header, footer, main */
+  --accent-color: #2c3e50; /* Dark charcoal grey for text */
+  --button-bg: #98b0c8; /* Soft blue for buttons */
+  --button-text: #ffffff; /* White text on buttons */
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--page-background);
+  color: var(--accent-color);
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: var(--form-elements-background);
+  color: var(--accent-color);
+  text-align: center;
+  padding: 1rem 0;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+main {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: var(--form-elements-background);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+label, legend {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--accent-color);
+}
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+input[type="submit"] {
+  background: var(--button-bg); /* Use button background color */
+  color: var(--button-text); /* Use button text color */
+  border: none;
+  padding: 0.7rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+input[type="submit"]:hover {
+  background: #7a93ac; /* Slightly darker blue on hover */
+}
+fieldset {
+  border: 1px solid #ccc; /* Lighter border for fieldset */
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0;
+}
+fieldset ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* Specific styles for checkboxes to align with image */
+fieldset ul li label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: normal; /* Labels within checkbox list should be normal weight */
+}
+fieldset ul li:last-child label {
+  margin-bottom: 0; /* No bottom margin for the last checkbox label */
+}
+input[type="radio"],
+input[type="checkbox"] {
+  /* Removed default margin-right to control spacing with flexbox or specific margins */
+  margin-right: 0.5rem; /* Re-added standard margin */
+  /* Custom styling for radio buttons to match image */
+  appearance: none;
+  background-color: #fff;
+  margin: 0 0.5rem 0 0; /* Align with image - some browsers default margin */
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-elements-background); /* Inner dot color */
+}
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+input[type="checkbox"] {
+  border-radius: 0.25em;
+}
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-elements-background); /* Inner checkmark color */
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Star Rating Styles (adjusting to image) */
+.rating-group {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+  justify-content: space-between; /* Distribute items evenly */
+  margin-top: 0.5rem;
+}
+
+.rating-group label {
+  display: flex;
+  flex-direction: column; /* Stack stars above radio */
+  align-items: center; /* Center horizontally */
+  color: var(--accent-color); /* Dark text for stars */
+  cursor: pointer;
+  font-size: 0.9rem; /* Smaller font for stars text */
+  flex: 1; /* Allow labels to take equal space */
+  min-width: 60px; /* Minimum width for each rating option */
+}
+
+.rating-group label .stars {
+  font-size: 1.5rem; /* Larger font for the star character itself */
+  line-height: 1;
+  margin-bottom: 0.3rem; /* Space between stars and radio button */
+  color: #333; /* Static black/dark color for hollow stars */
+}
+
+.rating-group input[type="radio"] {
+  /* Override general radio styles for custom circular appearance */
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color); /* Dark border for the circle */
+  background-color: #fff; /* White background for the circle */
+  appearance: none; /* Hide default radio button */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative; /* For custom dot */
+}
+
+.rating-group input[type="radio"]:checked {
+  border-color: var(--button-bg); /* Border color when checked */
+}
+
+.rating-group input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  background-color: var(--button-bg); /* Inner dot color */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  background: var(--form-elements-background);
+  color: var(--accent-color);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+} 
