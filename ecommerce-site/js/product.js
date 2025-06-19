@@ -1,31 +1,67 @@
 // Product Page Functionality
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize components
-    initializeGallery();
-    initializeQuantityInput();
-    initializeTabs();
-    initializeCountdown();
-    initializeZoom();
-    loadRelatedProducts();
-    loadRecentlyViewed();
+    // Get product ID from URL
+    const productId = getProductIdFromUrl();
+    
+    // Find product data
+    const product = productsData.find(p => p.id === productId);
+    
+    if (product) {
+        // Populate the page with product data
+        populateProductPage(product);
+        
+        // Initialize components
+        initializeGallery(product.images);
+        initializeQuantityInput();
+        initializeTabs();
+        initializeCountdown();
+        initializeZoom();
+        
+        // Load related products from the same category
+        const relatedProducts = productsData
+            .filter(p => p.category === product.category && p.id !== product.id)
+            .slice(0, 4);
+        loadRelatedProducts(relatedProducts);
+        
+        // Load recently viewed products
+        loadRecentlyViewed(product.id);
+        
+        // Setup product actions
+        setupProductDetailActions(product);
+    } else {
+        // Handle product not found
+        window.location.href = '404.html';
+    }
 });
 
 // Gallery functionality
-function initializeGallery() {
+function initializeGallery(images) {
     const mainImage = document.getElementById('main-image');
-    const thumbs = document.querySelectorAll('.thumb');
-
-    thumbs.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-            // Update active state
-            thumbs.forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
-
-            // Update main image
-            const newSrc = thumb.querySelector('img').src;
-            mainImage.src = newSrc;
+    const galleryThumbs = document.getElementById('gallery-thumbs');
+    
+    // Set main image
+    if (images && images.length > 0) {
+        mainImage.src = images[0];
+        mainImage.alt = 'Product Image';
+        
+        // Create thumbnails
+        images.forEach((image, index) => {
+            const thumb = document.createElement('div');
+            thumb.className = `thumb ${index === 0 ? 'active' : ''}`;
+            thumb.innerHTML = `<img src="${image}" alt="Product Thumbnail ${index + 1}">`;
+            
+            thumb.addEventListener('click', () => {
+                // Update active state
+                document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                
+                // Update main image
+                mainImage.src = image;
+            });
+            
+            galleryThumbs.appendChild(thumb);
         });
-    });
+    }
 }
 
 // Quantity input functionality
@@ -138,86 +174,70 @@ function initializeZoom() {
 }
 
 // Load related products
-function loadRelatedProducts() {
+function loadRelatedProducts(products) {
     const relatedProductsGrid = document.querySelector('.related-products .product-grid');
-    // Simulated related products data
-    const products = [
-        {
-            name: 'Samsung Galaxy S21',
-            price: 799.99,
-            image: 'https://source.unsplash.com/featured/?smartphone-1',
-            rating: 4.5
-        },
-        {
-            name: 'iPhone 13 Pro',
-            price: 999.99,
-            image: 'https://source.unsplash.com/featured/?smartphone-2',
-            rating: 4.8
-        },
-        {
-            name: 'Google Pixel 6',
-            price: 699.99,
-            image: 'https://source.unsplash.com/featured/?smartphone-3',
-            rating: 4.6
-        }
-    ];
-
-    products.forEach(product => {
-        relatedProductsGrid.innerHTML += createProductCard(product);
-    });
+    if (relatedProductsGrid) {
+        relatedProductsGrid.innerHTML = products.map(product => createProductCard(product)).join('');
+    }
 }
 
 // Load recently viewed products
-function loadRecentlyViewed() {
+function loadRecentlyViewed(currentProductId) {
+    // Get recently viewed from localStorage
+    let recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+    
+    // Add current product to recently viewed
+    if (!recentlyViewed.includes(currentProductId)) {
+        recentlyViewed.unshift(currentProductId);
+        // Keep only last 4 items
+        recentlyViewed = recentlyViewed.slice(0, 4);
+        localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
+    }
+    
+    // Get product data for recently viewed items
+    const recentProducts = recentlyViewed
+        .filter(id => id !== currentProductId)
+        .map(id => productsData.find(p => p.id === id))
+        .filter(Boolean);
+    
+    // Display recently viewed products
     const recentlyViewedGrid = document.querySelector('.recently-viewed .product-grid');
-    // Simulated recently viewed products data
-    const products = [
-        {
-            name: 'OnePlus 9 Pro',
-            price: 899.99,
-            image: 'https://source.unsplash.com/featured/?smartphone-4',
-            rating: 4.7
-        },
-        {
-            name: 'Xiaomi Mi 11',
-            price: 749.99,
-            image: 'https://source.unsplash.com/featured/?smartphone-5',
-            rating: 4.4
-        },
-        {
-            name: 'Huawei P40 Pro',
-            price: 849.99,
-            image: 'https://source.unsplash.com/featured/?smartphone-6',
-            rating: 4.3
-        }
-    ];
-
-    products.forEach(product => {
-        recentlyViewedGrid.innerHTML += createProductCard(product);
-    });
+    if (recentlyViewedGrid) {
+        recentlyViewedGrid.innerHTML = recentProducts.map(product => createProductCard(product)).join('');
+    }
 }
 
 // Helper function to create product cards
 function createProductCard(product) {
+    const discount = product.discount || Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+    
     return `
         <div class="product-card">
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}">
+                <a href="product.html?id=${product.id}">
+                    <img src="${product.images[0]}" alt="${product.name}">
+                </a>
+                ${discount ? `<span class="product-badge">-${discount}%</span>` : ''}
                 <div class="product-actions">
-                    <button class="action-btn wishlist">
+                    <button class="action-btn wishlist" onclick="addToWishlist('${product.id}')">
                         <i class="far fa-heart"></i>
                     </button>
-                    <button class="action-btn quick-view">
-                        <i class="far fa-eye"></i>
+                    <button class="action-btn compare" onclick="addToCompare('${product.id}')">
+                        <i class="fas fa-exchange-alt"></i>
                     </button>
                 </div>
             </div>
             <div class="product-info">
-                <h3 class="product-name">${product.name}</h3>
-                <div class="product-price">$${product.price}</div>
+                <h3 class="product-name">
+                    <a href="product.html?id=${product.id}">${product.name}</a>
+                </h3>
+                <div class="product-price">
+                    <span class="current-price">$${product.price.toFixed(2)}</span>
+                    ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
+                </div>
                 <div class="product-rating">
                     ${createStarRating(product.rating)}
-                    <span class="rating-value">${product.rating}</span>
+                    <span class="rating-count">(${product.reviews})</span>
                 </div>
             </div>
         </div>
@@ -313,34 +333,6 @@ function populateProductPage(product) {
     const specsTable = document.getElementById('specs-table');
     specsTable.innerHTML = Object.entries(product.specs).map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join('');
 }
-
-// On DOMContentLoaded, load product
-window.addEventListener('DOMContentLoaded', () => {
-    // Load productsData if not already loaded
-    if (typeof productsData === 'undefined') {
-        console.error('productsData not loaded!');
-        return;
-    }
-    const productId = getProductIdFromUrl();
-    const product = productsData.find(p => p.id === productId);
-    if (!product) {
-        document.querySelector('.product-page .container').innerHTML = '<h2>Product not found</h2>';
-        return;
-    }
-    populateProductPage(product);
-    updateHeaderCounts();
-    setupProductDetailActions(product);
-    renderReviews(product.id);
-    setupReviewForm(product.id);
-    // Re-initialize gallery, tabs, etc.
-    initializeGallery();
-    initializeTabs();
-    initializeQuantityInput();
-    initializeCountdown();
-    initializeZoom();
-    loadRelatedProducts();
-    loadRecentlyViewed();
-});
 
 function updateHeaderCounts() {
     document.querySelector('.cart-count').textContent = CartUtils.getCount('cart');
